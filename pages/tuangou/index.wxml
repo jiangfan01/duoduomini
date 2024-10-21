@@ -1,0 +1,6 @@
+<scroll-view class="scrollarea" scroll-y>
+  <view class="header">
+    <view class="location">{{ location || address }}</view> <!-- 显示获取到的定位信息 -->
+    <van-search value="{{ value }}" placeholder="请输入搜索关键词" />
+  </view>
+</scroll-view>
