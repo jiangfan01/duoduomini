@@ -8,6 +8,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "精选页面",
+          "pathName": "pages/jingxuan/jingxuan",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "团购页面",
           "pathName": "pages/tuangou/index",
           "query": "",
@@ -16,5 +23,6 @@
         }
       ]
     }
-  }
+  },
+  "libVersion": "3.6.3"
 }

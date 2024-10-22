@@ -1,1 +1,77 @@
-<view>111</view>
+<scroll-view class="scrollarea" scroll-y>
+    <view class="header">
+        <van-search value="{{ value }}" shape="round" placeholder="请输入搜索关键词"/>
+    </view>
+    <view class="swiper-container">
+        <swiper indicator-dots="true" layout-type="transformer" transformer-type="zoomOut" autoplay="true"
+                interval="3000" duration="500" indicator-color="rgba(0,0,0,.5)" indicator-active-color="#67c1b5">
+            <swiper-item>
+                <view class="swiper-item">
+                    <image src="/images/demo/test.jpg" alt="商品图片" class="swiper-image"/>
+                </view>
+            </swiper-item>
+            <swiper-item>
+                <view class="swiper-item">
+                    <image src="/images/demo/test.jpg" alt="商品图片" class="swiper-image"/>
+                </view>
+            </swiper-item>
+            <swiper-item>
+                <view class="swiper-item">
+                    <image src="/images/demo/test.jpg" alt="商品图片" class="swiper-image"/>
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+    <scroll-view class="content">
+        <view class="bottom">
+            <view class="tuangou-box">
+                <view class="tuangou-item">
+                    <view class="tuangou-item-img">
+                        <image src="/images/demo/test.jpg" alt="商品图片"/>
+                    </view>
+                    <view class="tuangou-info">
+                        <view class="tuangou-name">精品香蕉【5KG】</view>
+                        <view class="tuangou-price">¥ 49.00</view>
+                        <view class="buy">
+                            <view class="tuangou-sales">剩余 5 件</view>
+                            <view class="tuangou-btn">立即抢购</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="tuangou-item">
+                    <view class="tuangou-item-img">
+                        <image src="/images/demo/test.jpg" alt="商品图片"/>
+                    </view>
+                    <view class="tuangou-info">
+                        <view class="tuangou-name">精品香蕉【5KG】</view>
+                        <view class="tuangou-price">¥ 49.00</view>
+                        <view class="tuangou-sales">剩余 5 件</view>
+                        <view class="tuangou-btn">立即抢购</view>
+                    </view>
+                </view>
+                <view class="tuangou-item">
+                    <view class="tuangou-item-img">
+                        <image src="/images/demo/test.jpg" alt="商品图片"/>
+                    </view>
+                    <view class="tuangou-info">
+                        <view class="tuangou-name">精品香蕉【5KG】</view>
+                        <view class="tuangou-price">¥ 49.00</view>
+                        <view class="tuangou-sales">剩余 5 件</view>
+                        <view class="tuangou-btn">立即抢购</view>
+                    </view>
+                </view>
+                <view class="tuangou-item">
+                    <view class="tuangou-item-img">
+                        <image src="/images/demo/test.jpg" alt="商品图片"/>
+                    </view>
+                    <view class="tuangou-info">
+                        <view class="tuangou-name">精品香蕉【5KG】</view>
+                        <view class="tuangou-price">¥ 49.00</view>
+                        <view class="tuangou-sales">剩余 5 件</view>
+                        <view class="tuangou-btn">立即抢购</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</scroll-view>

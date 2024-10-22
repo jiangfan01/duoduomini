@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "精选"
+  "navigationBarTitleText": "精选",
+  "usingComponents": {
+    "van-search": "/miniprogram_npm/@vant/weapp/search/index"
+  }
 }

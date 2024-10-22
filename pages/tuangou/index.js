@@ -4,11 +4,87 @@ const qqMapWX = require('../../until/qqmap-wx-jssdk')
 Page({
     data: {
         location: '',
-        address:''
+        address: '',
+        tabs: [
+            {
+                title: '水果',
+                data: [
+                    {name: '香蕉', price: '¥ 49.00', number: '1', img: '/images/demo/test.jpg'},
+                    {name: '苹果', price: '¥ 59.00', number: '5', img: '/images/demo/test.jpg'},
+                    {name: '橙子', price: '¥ 39.00', number: '3', img: '/images/demo/test.jpg'},
+                ]
+            },
+            {
+                title: '生鲜',
+                data: [
+                    {name: '西红柿', price: '¥ 15.00', number: '10', img: '/images/demo/test.jpg'},
+                    {name: '青椒', price: '¥ 10.00', number: '8', img: '/images/demo/test.jpg'},
+                    {name: '黄瓜', price: '¥ 8.00', number: '12', img: '/images/demo/test.jpg'},
+                    {name: '秋葵', price: '¥ 15.00', number: '10', img: '/images/demo/test.jpg'},
+                    {name: '大白菜', price: '¥ 10.00', number: '8', img: '/images/demo/test.jpg'},
+                    {name: '小白菜', price: '¥ 8.00', number: '12', img: '/images/demo/test.jpg'},
+                ]
+            },
+            {
+                title: '肉类',
+                data: [
+                    {name: '牛肉', price: '¥ 149.00', number: '111', img: '/images/demo/test.jpg'},
+                    {name: '鸡肉', price: '¥ 49.00', number: '50', img: '/images/demo/test.jpg'},
+                    {name: '猪肉', price: '¥ 79.00', number: '20', img: '/images/demo/test.jpg'},
+                ]
+            },
+            {
+                title: '鱼类',
+                data: [
+                    {name: '新鲜鱼', price: '¥ 59.00', number: '1123', img: '/images/demo/test.jpg'},
+                    {name: '鲑鱼', price: '¥ 99.00', number: '10', img: '/images/demo/test.jpg'},
+                    {name: '鳕鱼', price: '¥ 89.00', number: '8', img: '/images/demo/test.jpg'},
+                ]
+            },
+            {
+                title: '电子',
+                data: [
+                    {name: '苹果16pro max', price: '¥ 10999.00', number: '1', img: '/images/demo/test.jpg'},
+                    {name: '华为P40', price: '¥ 4999.00', number: '2', img: '/images/demo/test.jpg'},
+                    {name: '小米11', price: '¥ 3999.00', number: '5', img: '/images/demo/test.jpg'},
+                ]
+            }
+        ],
+        currentItems: [],
     },
+
     onLoad: function () {
-        this.checkLocationPermission()
+        this.checkLocationPermission();
+        this.fetchData();
     },
+
+    fetchData: function () {
+        this.setData({ loading: true });
+        setTimeout(() => {
+            this.setData({
+                currentItems: this.data.tabs[0].data,
+                loading: false
+            });
+        }, 2000); // 模拟2秒的请求时间
+    },
+    onTabClick: function (e) {
+        const index = e.currentTarget.dataset.index;
+        this.setData({ loading: true });
+        setTimeout(() => {
+            this.setData({
+                activeTab: index,
+                currentItems: this.data.tabs[index].data,
+                loading: false
+            });
+        }, 1000);
+    },
+
+    handleClick: function (e) {
+        wx.navigateTo({
+            url: './webview',
+        });
+    },
+
     checkLocationPermission: function () {
         wx.getSetting({
             success: (res) => {
@@ -65,14 +141,12 @@ Page({
             success: function (res) {
                 const latitude = res.latitude;
                 const longitude = res.longitude;
-                console.log(latitude, longitude, 123)
                 qqmapsdk.reverseGeocoder({
                     location: {
                         latitude: latitude,
                         longitude: longitude
                     },
                     success: function (res) {
-                        console.log(res, 1111)
                         const location = res?.result?.address_reference.crossroad?.title;
                         const address = res.result.address_reference.landmark_l2.title;
 
@@ -87,5 +161,7 @@ Page({
                 });
             }
         });
-    },
-});
+    }
+    ,
+})
+;

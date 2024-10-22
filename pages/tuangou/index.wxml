@@ -1,6 +1,57 @@
 <scroll-view class="scrollarea" scroll-y>
-  <view class="header">
-    <view class="location">{{ location || address }}</view> <!-- 显示获取到的定位信息 -->
-    <van-search value="{{ value }}" placeholder="请输入搜索关键词" />
-  </view>
+    <view class="header">
+        <view class="location">{{ location || address }}</view> <!-- 显示获取到的定位信息 -->
+        <van-search value="{{ value }}" shape="round" placeholder="请输入搜索关键词"/>
+    </view>
+    <scroll-view class="content">
+        <view class="top">
+            <view class="product-card">
+                <image class="product-image" src="/images/demo/test.jpg" alt="商品图片"/>
+                <view class="product-info">
+                    <view class="product-name">精品香蕉【5KG】</view>
+                    <view class="product-description">今日下单明日达</view>
+                    <view class="product-price">¥ 49.00</view>
+                    <view class="product-sales">剩余 5 件</view>
+                    <van-tag class="product-tag" type="primary" size="small" plain="true" round="true" color="#67c1b5">
+                        今日优选
+                    </van-tag>
+                </view>
+            </view>
+        </view>
+        <view class="bottom">
+            <view class="tabs">
+                <view class="tab-bar" >
+                    <block wx:for="{{tabs}}" wx:key="index">
+                        <view class="tab {{activeTab === index ? 'active' : ''}}" bindtap="onTabClick" data-index="{{index}}">
+                            {{item.title}}
+                        </view>
+                    </block>
+                </view>
+                <view class="tab-content">
+                    <block wx:if="{{!loading}}">
+                        <block wx:for="{{currentItems}}" wx:key="name">
+                            <view class="tuangou-item">
+                                <view class="tuangou-item-img">
+                                    <image src="{{item.img}}" alt="商品图片"/>
+                                </view>
+                                <view class="tuangou-info">
+                                    <view class="tuangou-name">{{item.name}}</view>
+                                    <view class="tuangou-price">{{item.price}}</view>
+                                    <view class="buy">
+                                        <view class="tuangou-sales">剩余 {{item.number}} 件</view>
+                                        <view class="tuangou-btn" bindtap="handleClick">立即抢购</view>
+                                    </view>
+                                </view>
+                            </view>
+                        </block>
+                    </block>
+                    <view wx:else class="loading">
+                        <van-loading color="#67c1b5" size="48"></van-loading>
+                        <view class="text">加载中...</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+    </scroll-view>
 </scroll-view>

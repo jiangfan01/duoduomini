@@ -1,0 +1,201 @@
+/**index.wxss**/
+page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #f8f8f8;
+}
+
+.scrollarea {
+    flex: 1;
+    overflow-y: hidden;
+}
+
+.userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #aaa;
+    width: 80%;
+}
+
+.userinfo-avatar {
+    overflow: hidden;
+    width: 128rpx;
+    height: 128rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+}
+
+.usermotto {
+    margin-top: 200px;
+}
+
+.avatar-wrapper {
+    padding: 0;
+    width: 56px !important;
+    border-radius: 8px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.avatar {
+    display: block;
+    width: 56px;
+    height: 56px;
+}
+
+.nickname-wrapper {
+    display: flex;
+    width: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+    border-top: .5px solid rgba(0, 0, 0, 0.1);
+    border-bottom: .5px solid rgba(0, 0, 0, 0.1);
+    color: black;
+}
+
+.nickname-label {
+    width: 105px;
+}
+
+.nickname-input {
+    flex: 1;
+}
+.header{
+    background: white;
+}
+.location {
+    margin-left: 12px;
+    margin-bottom: 5px;
+}
+
+/*.content {*/
+/*    margin: 20rpx;*/
+/*}*/
+/*.top{*/
+/*    !*display: flex;*!*/
+/*}*/
+/*.today-youxuan{*/
+/*    display: flex;*/
+/*    gap: 10px;*/
+/*    background: white;*/
+/*    border-radius: 24rpx;*/
+/*    padding: 10rpx 40rpx;*/
+/*    justify-content: space-between;*/
+/*}*/
+/*.today-youxuan-info{*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    gap: 15rpx;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*}*/
+/*.description{*/
+/*    color: #dad9d9;*/
+/*}*/
+/*.price{*/
+/*    color: rgb(232, 77, 55);*/
+/*}*/
+/*image{*/
+/*    width: 280rpx;*/
+/*    height: 280rpx;*/
+/*}*/
+.content{
+    padding-bottom: 32px;
+}
+.product-card {
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin: 10px;
+    align-items: center;
+    background-color: #fff;
+}
+
+.product-image {
+    width: 100px; /* 控制图片大小 */
+    height: 100px; /* 控制图片大小 */
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.product-info {
+}
+
+.product-name {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.product-description {
+    font-size: 12px;
+    color: #888;
+}
+
+.product-price {
+    font-size: 14px;
+    color: #e54d42;
+    margin: 5px 0;
+}
+
+.product-sales {
+    font-size: 12px;
+    color: #666;
+}
+
+.product-tag {
+    margin-top: 5px;
+    padding: 2px 0;
+}
+.bottom{
+    margin: 10px;
+}
+.tuangou-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* 添加间距 */
+    /*display: grid;*/
+    /*grid-template-columns: repeat(2, 1fr);*/
+    /*gird-template-rows: masonry;*/
+    /*grid-gap: 10px;*/
+}
+
+.tuangou-item {
+    flex: 0 0 calc(50% - 10px); /* 每个 item 占 50% 的宽度，并减去间距的一半 */
+    box-sizing: border-box; /* 确保内边距和边框不会增加元素的总宽度 */
+    background: white;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.tuangou-item-img {
+    width: 100%;
+}
+
+.tuangou-item-img image {
+    width: 100%;
+    height: 260rpx;
+    object-fit: cover;
+
+}
+.tuangou-price{
+    margin-top: 5px;
+    color: rgb(232, 77, 55);
+}
+
+.tuangou-btn{
+    background:rgb(232, 77, 55) ;
+    color: white;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 24px;
+    text-align: center;
+    margin-top: 5px;
+}
+.swiper-image{
+    width: 100%;
+    object-fit: cover;
+}
