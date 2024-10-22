@@ -45,10 +45,7 @@
                             </view>
                         </block>
                     </block>
-                    <view wx:else class="loading">
-                        <van-loading color="#67c1b5" size="48"></van-loading>
-                        <view class="text">加载中...</view>
-                    </view>
+                    <modelLoading wx:else class="model-loading"></modelLoading>
                 </view>
             </view>
         </view>

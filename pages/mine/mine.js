@@ -1,10 +1,18 @@
 Page({
     data: {
-        // 页面数据
+        phoneNumber: '138****1234',
+        tabs: [],
     },
-    onLoad: function (options) {
-        wx.setNavigationBarTitle({
-            title: '我的'
-        });
-    }
+
+    onLoad() {
+    },
+
+    getUserInfo() {
+        setTimeout(() => {
+            this.setData({
+                phoneNumber: '17771513712'
+            });
+        }, 1000);
+    },
+
 });

@@ -228,7 +228,7 @@ page {
     flex-wrap: wrap;
     min-height: 300px;
 }
-.loading{
+.model-loading{
     width: 100%;
     display: flex;
     justify-content: center;

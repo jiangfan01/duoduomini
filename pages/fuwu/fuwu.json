@@ -1,3 +1,8 @@
 {
-  "navigationBarTitleText": "服务"
+  "navigationBarTitleText": "服务",
+  "usingComponents": {
+    "van-loading": "/miniprogram_npm/@vant/weapp/loading/index",
+    "modelLoading": "/components/loading",
+    "van-search": "/miniprogram_npm/@vant/weapp/search/index"
+  }
 }

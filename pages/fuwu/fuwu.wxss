@@ -1,0 +1,91 @@
+page {
+    background: #f8f8f8;
+}
+
+.content {
+
+}
+
+.swiper-image {
+    width: 100%;
+    object-fit: cover;
+}
+
+.tabs {
+    margin-top: 60px;
+    background: white;
+}
+
+.tab-bar {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.tab {
+    flex: none;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.tab.active {
+    border-bottom: 1px solid #67c1b5;
+}
+
+.tab-content {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    min-height: 300px;
+}
+
+.model-loading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tuangou-item {
+    display: flex;
+    justify-content: space-between;
+    height: 130px;
+    padding: 0 30px;
+    align-items: center;
+    border-bottom: 1px solid #f8f8f8;
+}
+
+.tuangou-item-img image {
+    width: 120px;
+    height: 100px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.tuangou-info {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.tuangou-name {
+    font-size: 18px;
+}
+
+.tuangou-price {
+    color: rgb(232, 77, 55);
+}
+
+.tuangou-btn {
+    width: 48px;
+    height: auto;
+    text-align: center;
+    padding: 3px 12px;
+    color: white;
+    border-radius: 24px;
+    background: #67c1b5;
+}

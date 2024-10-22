@@ -1,1 +1,53 @@
-<view>111</view>
+<scroll-view class="content">
+    <view class="header">
+        <van-search value="{{ value }}" shape="round" placeholder="请输入搜索关键词"/>
+    </view>
+    <view class="swiper-container">
+        <swiper indicator-dots="true" layout-type="transformer" transformer-type="zoomOut" autoplay="true"
+                interval="3000" duration="500" indicator-color="rgba(0,0,0,.5)" indicator-active-color="#67c1b5">
+            <swiper-item>
+                <view class="swiper-item">
+                    <image src="/images/demo/test.jpg" alt="商品图片" class="swiper-image"/>
+                </view>
+            </swiper-item>
+            <swiper-item>
+                <view class="swiper-item">
+                    <image src="/images/demo/test.jpg" alt="商品图片" class="swiper-image"/>
+                </view>
+            </swiper-item>
+            <swiper-item>
+                <view class="swiper-item">
+                    <image src="/images/demo/test.jpg" alt="商品图片" class="swiper-image"/>
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="tabs">
+        <view class="tab-bar" >
+            <block wx:for="{{tabs}}" wx:key="index">
+                <view class="tab {{activeTab === index ? 'active' : ''}}" bindtap="onTabClick" data-index="{{index}}">
+                    {{item.title}}
+                </view>
+            </block>
+        </view>
+        <view class="tab-content">
+            <block wx:if="{{!loading}}">
+                <block wx:for="{{currentItems}}" wx:key="name">
+                    <view class="tuangou-item">
+                        <view class="tuangou-item-img">
+                            <image src="{{item.img}}" alt="商品图片"/>
+                        </view>
+                        <view class="tuangou-info">
+                            <view class="tuangou-name">{{item.name}}</view>
+                            <view class="tuangou-price">{{item.price}}</view>
+                            <view class="buy">
+                                <view class="tuangou-btn" bindtap="handleClick">预约</view>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+            </block>
+            <modelLoading wx:else class="model-loading"></modelLoading>
+        </view>
+    </view>
+</scroll-view>

@@ -1,1 +1,60 @@
-<view>111</view>
+<view class="user-page">
+    <!-- 用户信息部分 -->
+    <view class="user-info">
+        <block wx:if="{{avatarUrl}}">
+            <view class="default-avatar">
+            <image src="{{avatarUrl}}" mode="aspectFill" class="avatar"></image>
+                <text class="phone">{{phoneNumber}}</text>
+            </view>
+        </block>
+        <block wx:else>
+            <view class="default-avatar">
+                <van-icon name="friends-o" size="38"/>
+            </view>
+            <text class="phone">点击登录</text>
+        </block>
+    </view>
+    <!-- 订单状态部分 -->
+    <view class="orders-section">
+        <text class="section-title">我的订单</text>
+        <view class="order-status">
+            <view class="status-item" bindtap="viewAllOrders">
+                <van-icon name="coupon-o" size="32"/>
+                <text>全部订单</text>
+            </view>
+            <view class="status-item" bindtap="viewPendingPayment">
+                <van-icon name="todo-list-o" size="32"/>
+                <text>待支付</text>
+            </view>
+            <view class="status-item" bindtap="viewPendingShipment">
+                <van-icon name="logistics" size="32"/>
+                <text>待发货</text>
+            </view>
+            <view class="status-item" bindtap="viewCompletedOrders">
+                <van-icon name="completed-o" size="32"/>
+                <text>已完成</text>
+            </view>
+            <view class="status-item" bindtap="viewCompletedOrders">
+                <van-icon name="label-o" size="32"/>
+                <text>我的售后</text>
+            </view>
+        </view>
+    </view>
+
+    <!-- 我的设置部分 -->
+    <view class="settings-section">
+        <text class="section-title">我的设置</text>
+        <view class="settings-item" bindtap="address">
+            <van-icon name="free-postage" size="24"/>
+            <text>收货地址</text>
+        </view>
+        <view class="settings-item" bindtap="contactSupport">
+            <van-icon name="service-o" size="24"/>
+            <text>联系客服</text>
+        </view>
+        <view class="settings-item" bindtap="viewCart">
+            <van-icon name="shopping-cart-o" size="24"/>
+            <text>购物车</text>
+        </view>
+    </view>
+</view>
