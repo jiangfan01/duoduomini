@@ -1,7 +1,8 @@
 Page({
     data: {
         phoneNumber: '138****1234',
-        avatarUrl: ""
+        avatarUrl: "",
+        show: false,
     },
 
     onLoad() {
@@ -21,10 +22,13 @@ Page({
         })
     },
     onChooseAvatar(e) {
-        const { avatarUrl } = e.detail;
+        const {avatarUrl} = e.detail;
         this.setData({
             avatarUrl
         });
-    }
-
+    },
+    showPopup() {
+        console.log(111)
+        this.setData({show: true});
+    },
 });

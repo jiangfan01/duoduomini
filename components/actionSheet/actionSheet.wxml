@@ -1,0 +1,37 @@
+<van-action-sheet
+        show="{{ show }}"
+        bind:close="onClose"
+        title="请选择"
+        description="团购/今日优选订单记得选择站点！"
+>
+    <view class="number-choose">
+        <view class="choose-text">选择商品数量</view>
+        <van-slider value="{{currentValue}}" bind:change="onChange" min="1" max="99" active-color="#67c1b5"/>
+    </view>
+    <view class="select-container">
+        <!-- 搜索框 -->
+        <van-search
+                value="{{searchValue}}"
+                placeholder="请输入站点名称"
+                show-action
+                bind:search="onSearchChange"
+                bind:cancel="onSearchCancel"
+        />
+
+        <!-- 站点列表 -->
+        <view wx:if="{{filteredOptions.length > 0}}" class="site-list">
+            <block wx:for="{{filteredOptions}}" wx:key="value">
+                <view bindtap="onSiteSelect" data-value="{{item.value}}" class="site-item {{selectedSite === item.value ? 'active' : ''}}">
+                    {{item.text}}
+                </view>
+            </block>
+        </view>
+        <!-- 无数据提示 -->
+        <view wx:else>
+            <view class="no-data">无站点数据</view>
+        </view>
+    </view>
+    <view class="button-group">
+        <van-button round type="primary" color="#67c1b5" custom-class="goto-pay">去下单</van-button>
+    </view>
+</van-action-sheet>

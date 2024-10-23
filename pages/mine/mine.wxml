@@ -9,7 +9,7 @@
         </block>
         <block wx:else>
             <button class="default-avatar" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
-                <van-icon name="friends-o" size="38" />
+                <van-icon name="friends-o" size="38"/>
             </button>
             <text class="phone">点击登录</text>
         </block>
@@ -48,13 +48,15 @@
             <van-icon name="free-postage" size="24"/>
             <text>收货地址</text>
         </view>
+        <view class="settings-item" bindtap="showPopup">
+            <van-icon name="shopping-cart-o" size="24"/>
+            <text>购物车</text>
+        </view>
         <view class="settings-item" bindtap="contactSupport">
             <van-icon name="service-o" size="24"/>
             <text>联系客服</text>
         </view>
-        <view class="settings-item" bindtap="viewCart">
-            <van-icon name="shopping-cart-o" size="24"/>
-            <text>购物车</text>
-        </view>
+
     </view>
+    <carList show="{{show}}" bind:close="onClose"></carList>
 </view>

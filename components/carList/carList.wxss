@@ -1,0 +1,73 @@
+.content {
+    margin-top: 64px;
+    padding: 0 20px;
+}
+
+.title {
+    display: flex;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333333;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.car-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item {
+    padding: 10px 0;
+    width: 100%;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+}
+
+.list-item {
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-img {
+    width: 60px;
+    height: 60px;
+    padding-right: 8px;
+}
+
+.list-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+}
+
+.list-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333333;
+    flex-grow: 1;
+}
+
+.list-price {
+    color: rgb(232, 77, 55);
+    white-space: nowrap;
+}
+
+.list-tag {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tag {
+    position: absolute;
+    right: 0;
+    border: 1px solid #67c1b5;
+    border-radius: 24px;
+    color: #67c1b5;
+    padding:0 4px;
+    font-size: 18rpx;
+}

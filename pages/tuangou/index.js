@@ -97,10 +97,9 @@ Page({
 
     handleClick: function (e) {
         wx.navigateTo({
-            url: './webview',
+            url: '/pages/details/details',
         });
     },
-
     // checkLocationPermission: function () {
     //     wx.getSetting({
     //         success: (res) => {

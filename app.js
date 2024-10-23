@@ -70,13 +70,13 @@ App({
                         longitude: longitude
                     },
                     success: function (res) {
-                        const location = res?.result?.address_reference.crossroad?.title || '未知地点';
-                        const address = res.result.address_reference.landmark_l2.title || '未知地址';
+                        const location = res?.result?.address_reference.crossroad?.title;
+                        const address = res.result.address_reference.landmark_l2.title;
 
                         // 设置全局数据
                         that.globalData.location = location;
                         that.globalData.address = address;
-                        if(that.globalData.locationReadyCallback){
+                        if (that.globalData.locationReadyCallback) {
                             that.globalData.locationReadyCallback(location, address);
                         }
 

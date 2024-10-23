@@ -1,0 +1,43 @@
+<view>
+    <mySwiper imgUrls="{{imgUrls}}"/>
+    <view class="content">
+        <view class="product-info">
+            <view class="info-box">
+                <view class="price">
+                    <view class="now-price">￥108</view>
+                    <view class="pre-price">￥180</view>
+                </view>
+                <van-tag round color="#67c1b5" plain size="large">剩余 11 件</van-tag>
+            </view>
+            <view class="product-name">
+                顶级核桃
+            </view>
+        </view>
+        <view class="product-description">
+            <view class="description">
+                商品描述 :
+            </view>
+            <view class="description-content">
+                <p>
+                    1、商品规格： 500g/盒
+                </p>
+                <p>
+                    2、商品说明：
+                </p>
+                <p>
+                    3、商品说明：
+                </p>
+
+            </view>
+        </view>
+    </view>
+    <view class="bottom-tab-bar">
+        <van-goods-action>
+            <van-goods-action-icon icon="wap-home-o" text="首页" size="24" bind:click="gotoHome"/>
+            <van-goods-action-icon icon="cart-o" text="购物车" size="24" bindtap="showPopup"/>
+            <van-goods-action-button color="#67c1b5" text="立即购买" bindtap="showAction"/>
+        </van-goods-action>
+    </view>
+    <carList show="{{show}}" bind:close="onClose"></carList>
+    <actionSheet show="{{actionShow}}" bind:close="onActionClose"/>
+</view>

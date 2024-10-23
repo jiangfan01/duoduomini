@@ -1,0 +1,64 @@
+<van-popup
+        show="{{ show }}"
+        position="right"
+        closeable="true"
+        custom-style="width:80%;height:100%;"
+        bind:close="onClose"
+>
+    <view class="content">
+        <view class="title">
+            <p>购物车</p>
+        </view>
+        <van-checkbox-group value="{{ result }}" bind:change="onChange" custom="car-list">
+            <van-checkbox name="a" custom-class="item" checked-color="#67c1b5">
+                <view class="list-item">
+                    <image src="/images/demo/test.jpg" alt="" class="list-img"></image>
+                    <view class="list-info">
+                        <view class="list-name">商品名: 精品核桃精品核桃</view>
+                        <view class="list-price">单价: ￥99.9</view>
+                        <view class="list-tag">
+                            <view class="list-number">数量: 2</view>
+                            <view class="tag">今日优选</view>
+                        </view>
+                    </view>
+
+                </view>
+            </van-checkbox>
+            <van-checkbox name="b" custom-class="item" checked-color="#67c1b5">
+                <view class="list-item">
+                    <image src="/images/demo/test.jpg" alt="" class="list-img"></image>
+                    <view class="list-info">
+                        <view class="list-name">商品名: 测试</view>
+                        <view class="list-price">单价: ￥99.9</view>
+                        <view class="list-tag">
+                            <view class="list-number">数量: 2</view>
+                            <view class="tag">团购</view>
+                        </view>
+                    </view>
+
+                </view>
+            </van-checkbox>
+            <van-checkbox name="c" custom-class="item" checked-color="#67c1b5">
+                <view class="list-item">
+                    <image src="/images/demo/test.jpg" alt="" class="list-img"></image>
+                    <view class="list-box">
+                        <view class="list-info">
+                            <view class="list-name">商品名: 卫生打扫</view>
+                            <view class="list-price">单价: ￥99.9</view>
+                            <view class="list-tag">
+                                <view class="list-number">数量: 2</view>
+                                <view class="tag">团购</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </van-checkbox>
+        </van-checkbox-group>
+        <van-submit-bar
+                price="{{ 3050 }}"
+                button-text="提交订单"
+                bind:submit="onSubmit"
+        />
+    </view>
+
+</van-popup>

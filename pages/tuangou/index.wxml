@@ -30,7 +30,7 @@
                 <view class="tab-content">
                     <block wx:if="{{!loading}}">
                         <block wx:for="{{currentItems}}" wx:key="name">
-                            <view class="tuangou-item">
+                            <view class="tuangou-item" catchtap="handleClick">
                                 <view class="tuangou-item-img">
                                     <image src="{{item.img}}" alt="商品图片"/>
                                 </view>
@@ -39,7 +39,7 @@
                                     <view class="tuangou-price">{{item.price}}</view>
                                     <view class="buy">
                                         <view class="tuangou-sales">剩余 {{item.number}} 件</view>
-                                        <view class="tuangou-btn" bindtap="handleClick">立即抢购</view>
+                                        <view class="tuangou-btn">立即抢购</view>
                                     </view>
                                 </view>
                             </view>

@@ -4,7 +4,8 @@
     "pages/jingxuan/jingxuan",
     "pages/fuwu/fuwu",
     "pages/mine/mine",
-    "pages/details/details"
+    "pages/details/details",
+    "pages/payInfo/payInfo"
   ],
   "window": {
     "navigationBarTextStyle": "black",

@@ -3,24 +3,7 @@
         <van-search value="{{ value }}" shape="round" placeholder="请输入搜索关键词"/>
     </view>
     <view class="swiper-container">
-        <swiper indicator-dots="true" layout-type="transformer" transformer-type="zoomOut" autoplay="true"
-                interval="3000" duration="500" indicator-color="rgba(0,0,0,.5)" indicator-active-color="#67c1b5">
-            <swiper-item>
-                <view class="swiper-item">
-                    <image src="/images/demo/test.jpg" alt="商品图片" class="swiper-image"/>
-                </view>
-            </swiper-item>
-            <swiper-item>
-                <view class="swiper-item">
-                    <image src="/images/demo/test.jpg" alt="商品图片" class="swiper-image"/>
-                </view>
-            </swiper-item>
-            <swiper-item>
-                <view class="swiper-item">
-                    <image src="/images/demo/test.jpg" alt="商品图片" class="swiper-image"/>
-                </view>
-            </swiper-item>
-        </swiper>
+        <mySwiper imgUrls="{{imgUrls}}"/>
     </view>
     <scroll-view class="content">
         <view class="bottom">
