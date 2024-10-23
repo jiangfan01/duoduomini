@@ -3,7 +3,8 @@
     "pages/tuangou/index",
     "pages/jingxuan/jingxuan",
     "pages/fuwu/fuwu",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/details/details"
   ],
   "window": {
     "navigationBarTextStyle": "black",

@@ -13,13 +13,18 @@
     border-radius: 20rpx;
 }
 
+/*.avatar {*/
+/*    width: 160rpx;*/
+/*    height: 160rpx;*/
+/*    border-radius: 50%;*/
+/*    margin-bottom: 20rpx;*/
+/*}*/
 .avatar {
-    width: 160rpx;
-    height: 160rpx;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
-    margin-bottom: 20rpx;
+    display: block;
 }
-
 .phone {
     font-size: 32rpx;
     color: #333;
@@ -79,9 +84,11 @@
     padding: 20rpx 0;
     border-bottom: 1rpx solid #f0f0f0;
 }
-.settings-item:nth-child(1){
+
+.settings-item:nth-child(1) {
     margin-top: 20px;
 }
+
 .settings-item:last-child {
     border-bottom: none;
 }
@@ -97,7 +104,7 @@
     color: #333;
 }
 
-.default-avatar{
+.default-avatar {
     background: #f8f8f8;
     width: 68px;
     height: 68px;
@@ -105,4 +112,19 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    margin: 0;
+}
+button {
+    margin: 0;
+    padding: 0;
+    background-color: inherit;
+    position: static;
+}
+
+button:after {
+    content: none;
+}
+
+button::after {
+    border: none;
 }

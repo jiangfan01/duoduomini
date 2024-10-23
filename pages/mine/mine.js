@@ -1,10 +1,11 @@
 Page({
     data: {
         phoneNumber: '138****1234',
-        tabs: [],
+        avatarUrl: ""
     },
 
     onLoad() {
+
     },
 
     getUserInfo() {
@@ -14,5 +15,16 @@ Page({
             });
         }, 1000);
     },
+    contactSupport() {
+        wx.makePhoneCall({
+            phoneNumber: '17771513712'
+        })
+    },
+    onChooseAvatar(e) {
+        const { avatarUrl } = e.detail;
+        this.setData({
+            avatarUrl
+        });
+    }
 
 });

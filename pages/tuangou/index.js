@@ -1,5 +1,5 @@
 // pages/tuangou/index.js
-const qqMapWX = require('../../until/qqmap-wx-jssdk')
+
 
 Page({
     data: {
@@ -54,12 +54,28 @@ Page({
     },
 
     onLoad: function () {
-        this.checkLocationPermission();
+        // this.checkLocationPermission();
         this.fetchData();
+        const app = getApp()
+        // 如果全局数据已经存在，直接设置页面数据
+        if (app.globalData.location && app.globalData.address) {
+            this.setData({
+                location: app.globalData.location,
+                address: app.globalData.address
+            });
+        } else {
+            // 如果全局数据还没有准备好，设置回调函数
+            app.globalData.locationReadyCallback = (location, address) => {
+                this.setData({
+                    location: location,
+                    address: address
+                });
+            };
+        }
     },
 
     fetchData: function () {
-        this.setData({ loading: true });
+        this.setData({loading: true});
         setTimeout(() => {
             this.setData({
                 currentItems: this.data.tabs[0].data,
@@ -69,7 +85,7 @@ Page({
     },
     onTabClick: function (e) {
         const index = e.currentTarget.dataset.index;
-        this.setData({ loading: true });
+        this.setData({loading: true});
         setTimeout(() => {
             this.setData({
                 activeTab: index,
@@ -85,83 +101,83 @@ Page({
         });
     },
 
-    checkLocationPermission: function () {
-        wx.getSetting({
-            success: (res) => {
-                if (!res.authSetting['scope.userLocation']) {
-                    wx.authorize({
-                        scope: 'scope.userLocation',
-                        success: () => {
-                            this.getLocation();
-                        },
-                        fail: () => {
-                            // 用户拒绝授权，提示用户手动授权
-                            wx.showModal({
-                                title: '提示',
-                                content: '需要获取您的位置信息，请在设置中开启授权。',
-                                showCancel: false,
-                                confirmText: '去设置',
-                                success: (res) => {
-                                    if (res.confirm) {
-                                        wx.openSetting({
-                                            success: (res) => {
-                                                if (res.authSetting['scope.userLocation']) {
-                                                    // 用户在设置中开启了授权，调用获取位置
-                                                    this.getLocation();
-                                                } else {
-                                                    // 用户在设置中仍然拒绝授权，提示用户
-                                                    wx.showToast({
-                                                        title: '授权失败',
-                                                        icon: 'none'
-                                                    });
-                                                }
-                                            }
-                                        });
-                                    }
-                                }
-                            });
-                        }
-                    });
-                } else {
-                    this.getLocation();
-                }
-            }
-        });
-    },
-    getLocation() {
-        const qqmapsdk = new qqMapWX({
-            key: '7NRBZ-GELKJ-5VLFA-XMIL4-LUEXH-XQF6I'
-        });
+    // checkLocationPermission: function () {
+    //     wx.getSetting({
+    //         success: (res) => {
+    //             if (!res.authSetting['scope.userLocation']) {
+    //                 wx.authorize({
+    //                     scope: 'scope.userLocation',
+    //                     success: () => {
+    //                         this.getLocation();
+    //                     },
+    //                     fail: () => {
+    //                         // 用户拒绝授权，提示用户手动授权
+    //                         wx.showModal({
+    //                             title: '提示',
+    //                             content: '需要获取您的位置信息，请在设置中开启授权。',
+    //                             showCancel: false,
+    //                             confirmText: '去设置',
+    //                             success: (res) => {
+    //                                 if (res.confirm) {
+    //                                     wx.openSetting({
+    //                                         success: (res) => {
+    //                                             if (res.authSetting['scope.userLocation']) {
+    //                                                 // 用户在设置中开启了授权，调用获取位置
+    //                                                 this.getLocation();
+    //                                             } else {
+    //                                                 // 用户在设置中仍然拒绝授权，提示用户
+    //                                                 wx.showToast({
+    //                                                     title: '授权失败',
+    //                                                     icon: 'none'
+    //                                                 });
+    //                                             }
+    //                                         }
+    //                                     });
+    //                                 }
+    //                             }
+    //                         });
+    //                     }
+    //                 });
+    //             } else {
+    //                 this.getLocation();
+    //             }
+    //         }
+    //     });
+    // },
+    // getLocation() {
+    //     const qqmapsdk = new qqMapWX({
+    //         key: '7NRBZ-GELKJ-5VLFA-XMIL4-LUEXH-XQF6I'
+    //     });
+    //
+    //     const that = this;
+    //     wx.getLocation({
+    //         type: 'gcj02',
+    //         highAccuracyExpireTime: 100,
+    //         isHighAccuracy: true,
+    //         success: function (res) {
+    //             const latitude = res.latitude;
+    //             const longitude = res.longitude;
+    //             qqmapsdk.reverseGeocoder({
+    //                 location: {
+    //                     latitude: latitude,
+    //                     longitude: longitude
+    //                 },
+    //                 success: function (res) {
+    //                     const location = res?.result?.address_reference.crossroad?.title;
+    //                     const address = res.result.address_reference.landmark_l2.title;
+    //
+    //                     that.setData({
+    //                         location: location,
+    //                         address: address
+    //                     });
+    //                 },
+    //                 fail: function (err) {
+    //                     console.error('反地理编码失败', err);
+    //                 }
+    //             });
+    //         }
+    //     });
+    // }
 
-        const that = this;
-        wx.getLocation({
-            type: 'gcj02',
-            highAccuracyExpireTime: 100,
-            isHighAccuracy: true,
-            success: function (res) {
-                const latitude = res.latitude;
-                const longitude = res.longitude;
-                qqmapsdk.reverseGeocoder({
-                    location: {
-                        latitude: latitude,
-                        longitude: longitude
-                    },
-                    success: function (res) {
-                        const location = res?.result?.address_reference.crossroad?.title;
-                        const address = res.result.address_reference.landmark_l2.title;
-
-                        that.setData({
-                            location: location,
-                            address: address
-                        });
-                    },
-                    fail: function (err) {
-                        console.error('反地理编码失败', err);
-                    }
-                });
-            }
-        });
-    }
-    ,
 })
 ;
