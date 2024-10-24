@@ -1,11 +1,16 @@
-.number-choose, .site-choose {
-    margin: 24px 48px;
+.info-item {
+    margin: 24px 24px;
 }
 
-.choose-text {
-    margin-bottom: 24px;
+.info-title {
+    padding-bottom: 24px;
     font-size: 18px;
-    font-weight: bold;
+    color: #333333;
+    font-weight: 600;
+}
+
+.user-phone {
+    padding-bottom: 12px;
 }
 
 .dropdown {
@@ -44,6 +49,7 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    max-height: 160px;
 }
 
 .site-item {
@@ -66,13 +72,42 @@
     text-align: center;
     color: #999;
     padding: 20px;
-    min-height: 80px ;
+    min-height: 80px;
 }
 
 .button-group {
-    position: fixed;
-    bottom: 24px;
-    left: 50%;
-    transform: translateX(-50%);
     z-index: 1000;
+    padding-bottom: 12px;
+}
+
+.custom-button {
+    border: 1px solid #67c1b5;
+    width: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 28px;
+    border-radius: 50%;
+    background: #67c1b5;
+    color: white;
+    text-align: center;
+}
+
+.address-popup {
+    height: 50%;
+}
+
+.address-popup-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.address-list {
+    padding: 16px;
+}
+
+.address-item {
+    padding: 12px;
+    border-bottom: 1px solid #e5e5e5;
 }

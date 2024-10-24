@@ -8,11 +8,13 @@ Page({
         ],
         currentIndex: 0,
         show: false,
-        actionShow: false
+        actionShow: false,
+        openAction: true
     },
 
-    onLoad: function () {
-
+    onLoad: function (options) {
+        const openAction = options.openAction === "true";
+        this.setData({ openAction });
     },
     showPopup() {
         this.setData({show: true});

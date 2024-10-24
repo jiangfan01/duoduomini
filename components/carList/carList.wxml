@@ -8,6 +8,7 @@
     <view class="content">
         <view class="title">
             <p>购物车</p>
+            <van-icon name="delete-o"  size="24" bindtap="delete"/>
         </view>
         <van-checkbox-group value="{{ result }}" bind:change="onChange" custom="car-list">
             <van-checkbox name="a" custom-class="item" checked-color="#67c1b5">
@@ -54,6 +55,7 @@
                 </view>
             </van-checkbox>
         </van-checkbox-group>
+
         <van-submit-bar
                 price="{{ 3050 }}"
                 button-text="提交订单"

@@ -31,13 +31,12 @@
             </view>
         </view>
     </view>
-    <view class="bottom-tab-bar">
-        <van-goods-action>
-            <van-goods-action-icon icon="wap-home-o" text="首页" size="24" bind:click="gotoHome"/>
-            <van-goods-action-icon icon="cart-o" text="购物车" size="24" bindtap="showPopup"/>
+
+    <van-goods-action>
+            <van-goods-action-icon icon="wap-home-o" text="首页" size="20" bind:click="gotoHome"/>
+            <van-goods-action-icon icon="cart-o" text="购物车" size="20" bindtap="showPopup"/>
             <van-goods-action-button color="#67c1b5" text="立即购买" bindtap="showAction"/>
-        </van-goods-action>
-    </view>
+    </van-goods-action>
     <carList show="{{show}}" bind:close="onClose"></carList>
-    <actionSheet show="{{actionShow}}" bind:close="onActionClose"/>
+    <actionSheet show="{{actionShow}}" openAction="{{openAction}}" bind:close="onActionClose"/>
 </view>

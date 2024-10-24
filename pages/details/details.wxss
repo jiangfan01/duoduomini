@@ -104,3 +104,6 @@ page {
     padding: 10px 0;
     color: #333;
 }
+.bottom-tab-bar{
+    margin-left: 24px;
+}

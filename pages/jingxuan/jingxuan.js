@@ -16,4 +16,9 @@ Page({
             currentIndex: e.detail.current
         })
     },
+    handleClick(){
+        wx.navigateTo({
+            url: '/pages/details/details?openAction=false',
+        });
+    }
 });

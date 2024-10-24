@@ -1,4 +1,6 @@
 {
+  "navigationBarTitleText": "确认支付",
   "usingComponents": {
+    "van-count-down": "/miniprogram_npm/@vant/weapp/count-down/index"
   }
 }

@@ -9,6 +9,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "支付",
+          "pathName": "pages/payInfo/payInfo",
+          "query": "hasSite=true",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "详情",
           "pathName": "pages/details/details",
           "query": "",

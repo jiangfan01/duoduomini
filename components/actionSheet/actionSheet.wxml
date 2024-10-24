@@ -4,34 +4,93 @@
         title="请选择"
         description="团购/今日优选订单记得选择站点！"
 >
-    <view class="number-choose">
-        <view class="choose-text">选择商品数量</view>
-        <van-slider value="{{currentValue}}" bind:change="onChange" min="1" max="99" active-color="#67c1b5"/>
+    <view class="info-item">
+        <view class="info-title">选择商品数量:{{currentValue}}</view>
+        <van-slider value="{{ currentValue }}" min="1" max="9" step="1" active-color="#67c1b5" use-button-slot
+                    bind:drag="onDrag" bind:change="onChange">
+            <view class="custom-button" slot="button">{{ currentValue }}</view>
+        </van-slider>
+
     </view>
-    <view class="select-container">
-        <!-- 搜索框 -->
+    <view class="info-item">
+        <view class="info-title user-phone">输入手机号:</view>
+        <van-cell-group>
+            <van-field
+                    value="{{ userPhone }}"
+                    required
+                    clearable="true"
+                    label="手机号"
+                    placeholder="输入收货人手机号"
+                    bindchange="onUserPhoneChange"
+            />
+
+        </van-cell-group>
+    </view>
+    <view class="info-item">
+        <view class="info-title user-address">选择地址:</view>
+        <van-cell-group>
+            <van-field
+                    value="{{ userAddress }}"
+                    readonly
+                    required
+                    clickable
+                    label="地址"
+                    placeholder="请选择收货地址"
+                    bindtap="onAddressSelect"
+            />
+        </van-cell-group>
+    </view>
+
+    <!-- 地址选择弹窗 -->
+    <van-popup show="{{ showAddressPopup }}" position="bottom" custom-class="address-popup">
+        <view wx:if="{{addressOptions.length === 0}}">
+            <view class="address-popup-header">
+                <text>暂无地址</text>
+                <view bindtap="closeAddressPopup" class="close-popup">关闭</view>
+            </view>
+            <view class="no-data">
+                <van-empty description="您当前咱无收货地址">
+                    <van-button round  class="bottom-button" color="#67c1b5">去添加新地址</van-button>
+                </van-empty>
+            </view>
+        </view>
+        <view wx:else>
+            <view class="address-popup-header">
+                <text>选择地址</text>
+                <view bindtap="closeAddressPopup" class="close-popup">关闭</view>
+            </view>
+            <view class="address-list">
+                <block wx:for="{{addressOptions}}" wx:key="id">
+                    <view bindtap="selectAddress" data-id="{{item.id}}" class="address-item">
+                        <text>{{item.name}}</text>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </van-popup>
+    <view class="info-item" wx:if="{{openAction}}">
+        <view class="info-title">选择站点</view>
         <van-search
                 value="{{searchValue}}"
-                placeholder="请输入站点名称"
+                placeholder="输入站点名称"
                 show-action
                 bind:search="onSearchChange"
                 bind:cancel="onSearchCancel"
         />
-
-        <!-- 站点列表 -->
-        <view wx:if="{{filteredOptions.length > 0}}" class="site-list">
+        <scroll-view wx:if="{{filteredOptions.length > 0}}" class="site-list" scroll-y="true" scroll-x="false">
             <block wx:for="{{filteredOptions}}" wx:key="value">
-                <view bindtap="onSiteSelect" data-value="{{item.value}}" class="site-item {{selectedSite === item.value ? 'active' : ''}}">
+                <view bindtap="onSiteSelect" data-value="{{item.value}}"
+                      class="site-item {{selectedSite === item.value ? 'active' : ''}}">
                     {{item.text}}
                 </view>
             </block>
-        </view>
-        <!-- 无数据提示 -->
+        </scroll-view>
         <view wx:else>
             <view class="no-data">无站点数据</view>
         </view>
     </view>
+
     <view class="button-group">
-        <van-button round type="primary" color="#67c1b5" custom-class="goto-pay">去下单</van-button>
+        <van-button round type="primary" color="#67c1b5" custom-class="goto-pay" bind:click="onPay">去支付</van-button>
     </view>
 </van-action-sheet>

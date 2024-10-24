@@ -97,7 +97,7 @@ Page({
 
     handleClick: function (e) {
         wx.navigateTo({
-            url: '/pages/details/details',
+            url: '/pages/details/details?openAction=true',
         });
     },
     // checkLocationPermission: function () {
