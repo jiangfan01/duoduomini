@@ -1,0 +1,34 @@
+<scroll-view class="container" scroll-y="true">
+    <view class="content">
+        <view class="item-box" wx:if="{{addressList.length === 0}}">
+            <van-empty
+                    class="custom-image"
+                    image="https://img.yzcdn.cn/vant/custom-empty-image.png"
+                    description="暂无收获地址，请添加"
+            />
+        </view>
+        <view class="item-box" wx:else>
+            <view class="item" wx:for="{{addressList}}" wx:key="index">
+                <view class="address">{{item.fullAddress}}</view>
+                <view class="action">
+                    <view class="edit" bindtap="onEdit" data-index="{{index}}">编辑</view>
+                    <view class="edit" bindtap="onDelete" data-index="{{index}}">删除</view>
+                </view>
+            </view>
+        </view>
+        <view class="add" bindtap="onAdd">添加地址</view>
+    </view>
+
+    <!-- 编辑/新增地址弹窗 -->
+    <van-action-sheet custom-class="action-sheet" show="{{ show }}" title="{{ isEditing ? '编辑地址' : '新增地址' }}"
+                      show-cancel-button="true" bind:close="onClose">
+        <van-field
+                value="{{ currentAddress }}"
+                label="地址"
+                placeholder="请输入地址"
+                bindinput="onAddressInput"
+        >
+        </van-field>
+        <view class="add" bindtap="onConfirm">完成</view>
+    </van-action-sheet>
+</scroll-view>

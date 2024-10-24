@@ -1,0 +1,15 @@
+.info-item {
+    margin: 24px 24px;
+}
+
+.info-title {
+    padding-bottom: 24px;
+    font-size: 18px;
+    color: #333333;
+    font-weight: 600;
+}
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}

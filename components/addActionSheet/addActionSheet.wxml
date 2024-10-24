@@ -1,0 +1,17 @@
+<van-action-sheet
+        show="{{ show }}"
+        actions="{{ actions }}"
+        bind:close="onClose"
+        bind:select="onSelect"
+        title="请选择"
+>
+    <view class="info-item">
+        <view class="info-title">选择商品数量:{{currentValue}}</view>
+        <van-stepper value="{{ currentValue }}" integer round bind:change="onChange"/>
+    </view>
+    <view class="button-group">
+        <van-button round type="primary" color="#67c1b5" custom-class="goto-pay" bind:click="addCarList">
+            添加到购物车
+        </van-button>
+    </view>
+</van-action-sheet>

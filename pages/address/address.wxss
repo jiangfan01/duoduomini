@@ -1,0 +1,94 @@
+page {
+    background-color: #f8f8f8;
+}
+
+.container {
+    padding: 20px;
+
+}
+
+.content {
+    background: white;
+    padding: 20px;
+}
+
+.add {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    border: 1px solid #67c1b5;
+    border-radius: 24px;
+    background: #67c1b5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 30px;
+}
+
+.item-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1rpx solid #f0f0f0;
+
+}
+
+.address {
+    max-width: 80%;
+    text-overflow: ellipsis;
+    white-space: wrap;
+}
+
+.action {
+    display: flex;
+    align-items: center; /* 垂直居中对齐 */
+}
+
+.edit {
+    flex-shrink: 0;
+    white-space: nowrap;
+    margin-left: 10px;
+    color: #999999;
+}
+
+.action-sheet{
+    min-height: 200px;
+}
+.address-list {
+    margin-bottom: 20px;
+}
+
+.address-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.address-info text {
+    display: block;
+    color: #333;
+}
+
+.address-actions button {
+    margin-left: 10px;
+}
+
+.popup-class {
+    height: 50%;
+    padding: 20px;
+    background-color: #fff;
+}
