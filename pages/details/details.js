@@ -1,38 +1,62 @@
 Page({
     data: {
         imgUrls: [
-            "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2512412073,484693686&fm=27&gp=0.jpg",
-            "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=231620273,2622968107&fm=27&gp=0.jpg",
-            "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=281531042,273318123&fm=27&gp=0.jpg",
-            "http://img4.imgtn.bdimg.com/it/u=2731345960,2613387946&fm=26&gp=0.jpg"
+            "https://example.com/image1.jpg",
+            "https://example.com/image2.jpg",
+            "https://example.com/image3.jpg",
+            "https://example.com/image4.jpg"
         ],
         currentIndex: 0,
         show: false,
-        actionShow: false,
-        openAction: true
+        actionShow: false, // 控制购买操作弹窗显示
+        openAction: true,
+        addActionShow: false
     },
 
+    // 页面加载时
     onLoad: function (options) {
         const openAction = options.openAction === "true";
         this.setData({ openAction });
     },
+
+    // 显示购物车的弹窗
     showPopup() {
         this.setData({show: true});
     },
+
+    // 显示购买操作的弹窗
     showAction() {
         this.setData({actionShow: true});
     },
-    onClose() {
-        this.setData({show: false});
+    showAddAction() {
+        this.setData({
+            addActionShow: true
+        });
     },
+
+    // 关闭 addActionSheet 弹窗的方法
+    onAddActionClose() {
+        this.setData({
+            addActionShow: false
+        });
+    },
+
+    // 关闭购买操作弹窗
+    onActionClose() {
+        this.setData({actionShow: false});
+    },
+
+    // 返回首页
     gotoHome() {
         wx.switchTab({
             url: '/pages/tuangou/index'
         })
     },
+
+    // 轮播图切换
     swiperChange(e) {
         this.setData({
             currentIndex: e.detail.current
-        })
+        });
     },
-})
+});

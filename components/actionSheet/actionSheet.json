@@ -2,13 +2,13 @@
   "component": true,
   "usingComponents": {
     "van-action-sheet": "/miniprogram_npm/@vant/weapp/action-sheet/index",
-    "van-slider": "/miniprogram_npm/@vant/weapp/slider/index",
     "van-dropdown-menu": "/miniprogram_npm/@vant/weapp/dropdown-menu/index",
     "van-dropdown-item": "/miniprogram_npm/@vant/weapp/dropdown-item/index",
     "van-search": "/miniprogram_npm/@vant/weapp/search/index",
     "van-button": "/miniprogram_npm/@vant/weapp/button/index",
     "van-field": "/miniprogram_npm/@vant/weapp/field/index",
     "van-popup": "/miniprogram_npm/@vant/weapp/popup/index",
+    "van-stepper": "/miniprogram_npm/@vant/weapp/stepper/index",
     "van-empty": "/miniprogram_npm/@vant/weapp/empty/index"
   }
 }

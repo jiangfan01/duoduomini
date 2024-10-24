@@ -31,4 +31,9 @@ Page({
         console.log(111)
         this.setData({show: true});
     },
+    address() {
+        wx.navigateTo({
+            url: '/pages/address/address'
+        })
+    }
 });

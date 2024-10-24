@@ -6,10 +6,7 @@
 >
     <view class="info-item">
         <view class="info-title">选择商品数量:{{currentValue}}</view>
-        <van-slider value="{{ currentValue }}" min="1" max="9" step="1" active-color="#67c1b5" use-button-slot
-                    bind:drag="onDrag" bind:change="onChange">
-            <view class="custom-button" slot="button">{{ currentValue }}</view>
-        </van-slider>
+        <van-stepper value="{{ currentValue }}" integer round bind:change="onChange"/>
 
     </view>
     <view class="info-item">
@@ -50,7 +47,7 @@
             </view>
             <view class="no-data">
                 <van-empty description="您当前咱无收货地址">
-                    <van-button round  class="bottom-button" color="#67c1b5">去添加新地址</van-button>
+                    <van-button round class="bottom-button" color="#67c1b5">去添加新地址</van-button>
                 </van-empty>
             </view>
         </view>

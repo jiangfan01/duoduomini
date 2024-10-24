@@ -97,9 +97,8 @@ Component({
         },
         onChange(event) {
             this.setData({
-                currentValue: event.detail
-            });
-            wx.showToast({icon: 'none', title: `当前数量：${event.detail}`});
+                currentValue: event.detail,
+            })
         },
         onDrag(event) {
             this.setData({
@@ -108,7 +107,6 @@ Component({
         },
         onUserPhoneChange(event) {
             const userPhone = event.detail;
-            console.log(event, 2322)
             this.setData({userPhone: userPhone});
         },
         onPay() {
