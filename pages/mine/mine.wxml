@@ -48,7 +48,7 @@
             <van-icon name="free-postage" size="24"/>
             <text>收货地址</text>
         </view>
-        <view class="settings-item" bindtap="showPopup">
+        <view class="settings-item" bindtap="gotoCarList">
             <van-icon name="shopping-cart-o" size="24"/>
             <text>购物车</text>
         </view>
@@ -58,5 +58,4 @@
         </view>
 
     </view>
-    <carList show="{{show}}" bind:close="onClose"></carList>
 </view>

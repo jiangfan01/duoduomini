@@ -35,5 +35,10 @@ Page({
         wx.navigateTo({
             url: '/pages/address/address'
         })
+    },
+    gotoCarList() {
+        wx.navigateTo({
+            url: '/pages/carList/carList'
+        })
     }
 });

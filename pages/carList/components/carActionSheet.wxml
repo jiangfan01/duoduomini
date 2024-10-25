@@ -1,14 +1,4 @@
-<van-action-sheet
-        show="{{ show }}"
-        bind:close="onClose"
-        title="立即购买"
-        description="团购/今日优选订单记得选择站点！"
->
-    <view class="info-item">
-        <view class="info-title">选择商品数量:{{currentValue}}</view>
-        <van-stepper value="{{ currentValue }}" integer round bind:change="onChange"/>
-
-    </view>
+<van-action-sheet show="{{ show }}" title="填写信息" bind:close="onCloseActionSheet">
     <view class="info-item">
         <view class="info-title user-phone">输入手机号:</view>
         <van-cell-group>
@@ -37,7 +27,6 @@
             />
         </van-cell-group>
     </view>
-
     <!-- 地址选择弹窗 -->
     <van-popup show="{{ showAddressPopup }}" position="bottom" custom-class="address-popup">
         <view wx:if="{{addressOptions.length === 0}}">
@@ -47,7 +36,8 @@
             </view>
             <view class="no-data">
                 <van-empty description="您当前咱无收货地址">
-                    <van-button round class="bottom-button" color="#67c1b5" bindtap="onAddAddress">去添加新地址</van-button>
+                    <van-button round class="bottom-button" color="#67c1b5" bindtap="onAddAddress">去添加新地址
+                    </van-button>
                 </van-empty>
             </view>
         </view>
@@ -66,8 +56,8 @@
         </view>
     </van-popup>
     <!--    站点选择-->
-    <view class="info-item" wx:if="{{openAction}}">
-        <view class="info-title">选择站点</view>
+    <view class="info-item">
+        <view class="info-title">选择站点:{{selectedSite}}</view>
         <van-search
                 value="{{searchValue}}"
                 placeholder="输入站点名称"
@@ -87,7 +77,6 @@
             <view class="no-data">无站点数据</view>
         </view>
     </view>
-
     <view class="button-group">
         <van-button round type="primary" color="#67c1b5" custom-class="goto-pay" bind:click="onPay">去支付</van-button>
     </view>

@@ -107,3 +107,6 @@ page {
 .bottom-tab-bar{
     margin-left: 24px;
 }
+.home{
+    margin-left: 20px;
+}

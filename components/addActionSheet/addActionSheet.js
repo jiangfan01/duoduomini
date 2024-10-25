@@ -3,7 +3,11 @@ Component({
         show: {
             type: Boolean,
             value: false
-        }
+        },
+        openAction: {
+            type: Boolean,
+            value: false
+        },
     },
     data: {
         currentValue: 1,

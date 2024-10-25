@@ -9,6 +9,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "购物车列表",
+          "pathName": "pages/carList/carList",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "支付",
           "pathName": "pages/payInfo/payInfo",
           "query": "hasSite=true",

@@ -1,0 +1,37 @@
+<scroll-view class="car-list" scroll-y="true">
+    <view class="list-box">
+        <block wx:for="{{ carList }}" wx:key="index" class="block">
+            <view class="list-item">
+                <view class="item-img">
+                    <image src="{{ item.imgUrl }}" class="item-image"></image>
+                </view>
+                <view class="item-info">
+                    <view class="name">{{ item.name }}</view>
+                    <view class="description">{{ item.description }}</view>
+                    <van-tag color="#67c1b5" plain round>{{ item.tag }}</van-tag>
+                    <view class="price-box">
+                        <view class="price">￥{{ item.price }}</view>
+                        <view class="pre-price">￥{{ item.prePrice }}</view>
+                    </view>
+                    <view class="delete" bindtap="delete">
+                        <van-icon name="delete-o" size="20"/>
+                    </view>
+                    <view class="number">
+                        <van-stepper
+                                value="{{ item.quantity }}"
+                                button-size="20"
+                                bind:change="onQuantityChange"
+                                data-index="{{ index }}"
+                        />
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <van-goods-action>
+        <van-goods-action-icon icon="delete-o" text="清空购物车" size="20" icon-class="delete-all"
+                               text-class="delete-all" bind:click="deleteAll"/>
+        <van-goods-action-button text="去结账" color="#67c1b5" bindtap="onOpenAction"/>
+    </van-goods-action>
+    <carActionSheet show="{{ show }}" tags="{{ tags }}" bind:close="onCloseActionSheet"/>
+</scroll-view>

@@ -5,13 +5,13 @@ Page({
                 title: '家政',
                 data: [
                     {name: '扫地', price: '¥ 49.00', img: '/images/demo/test.jpg'},
-                    {name: '清洁', price: '¥ 59.00',  img: '/images/demo/test.jpg'},
+                    {name: '清洁', price: '¥ 59.00', img: '/images/demo/test.jpg'},
                 ]
             },
             {
                 title: '洗车',
                 data: [
-                    {name: '上门清洗', price: '¥ 15.00',  img: '/images/demo/test.jpg'},
+                    {name: '上门清洗', price: '¥ 15.00', img: '/images/demo/test.jpg'},
                     {name: '预约清洗', price: '¥ 10.00', img: '/images/demo/test.jpg'},
                 ]
             },
@@ -23,7 +23,7 @@ Page({
             "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=281531042,273318123&fm=27&gp=0.jpg",
             "http://img4.imgtn.bdimg.com/it/u=2731345960,2613387946&fm=26&gp=0.jpg"
         ],
-        currentIndex:0
+        currentIndex: 0
     },
     onLoad: function (options) {
         wx.setNavigationBarTitle({
@@ -31,9 +31,9 @@ Page({
         });
         this.fetchData();
     },
-    swiperChange(e){
+    swiperChange(e) {
         this.setData({
-            currentIndex:e.detail.current
+            currentIndex: e.detail.current
         })
     },
     fetchData: function () {
@@ -59,7 +59,7 @@ Page({
 
     handleClick: function (e) {
         wx.navigateTo({
-            url: './webview',
+            url:   "/pages/reserve/reserve",
         });
     },
 });

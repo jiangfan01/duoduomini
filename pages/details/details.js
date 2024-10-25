@@ -7,8 +7,7 @@ Page({
             "https://example.com/image4.jpg"
         ],
         currentIndex: 0,
-        show: false,
-        actionShow: false, // 控制购买操作弹窗显示
+        actionShow: false,
         openAction: true,
         addActionShow: false
     },
@@ -19,10 +18,10 @@ Page({
         this.setData({ openAction });
     },
 
-    // 显示购物车的弹窗
-    showPopup() {
-        this.setData({show: true});
-    },
+    // // 显示购物车的弹窗
+    // showPopup() {
+    //     this.setData({show: true});
+    // },
 
     // 显示购买操作的弹窗
     showAction() {
@@ -51,6 +50,12 @@ Page({
         wx.switchTab({
             url: '/pages/tuangou/index'
         })
+    },
+
+    gotoCar(){
+        wx.navigateTo({
+            url: '/pages/carList/carList',
+        });
     },
 
     // 轮播图切换

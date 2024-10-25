@@ -2,7 +2,6 @@
   "navigationBarTitleText": "商品详情",
   "usingComponents": {
     "mySwiper": "/components/swiper/mySwiper",
-    "carList": "/components/carList/carList",
     "actionSheet": "/components/actionSheet/actionSheet",
     "addActionSheet": "/components/addActionSheet/addActionSheet",
     "van-goods-action": "/miniprogram_npm/@vant/weapp/goods-action/index",

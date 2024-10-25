@@ -1,0 +1,51 @@
+<scroll-view>
+    <view class="container">
+        <view class="title">
+            <text class="tag">家政—辅导</text>
+        </view>
+        <van-cell-group>
+            <van-field
+                    value="{{ phoneNumber }}"
+                    required
+                    clearable
+                    label="手机号"
+                    placeholder="请输入手机号"
+                    bind:change="phoneNumberChange"
+            />
+
+            <van-field
+                    value="{{ address }}"
+                    label="地址"
+                    placeholder="请输入您的地址"
+                    required
+                    clearable
+                    bind:change="addressChange"
+            />
+
+            <!-- 时间选择字段，绑定了 onShowTime 函数 -->
+            <van-field
+                    value="{{ time }}"
+                    label="时间"
+                    placeholder="请选择上门时间"
+                    required
+                    clearable
+                    bindtap="onShowTime"
+            />
+        </van-cell-group>
+    </view>
+    <van-popup show="{{ showTimePopup }}" position="bottom" bind:close="closeTimePopup">
+        <van-datetime-picker
+                type="datetime"
+                value="{{ currentDate }}"
+                min-date="{{ minDate }}"
+                max-date="{{ maxDate }}"
+                bind:input="onInput"
+                bind:confirm="onConfirm"
+                columns="{{ timeColumns }}"
+                bind:cancel="closeTimePopup"
+        />
+    </van-popup>
+    <view class="btn" bindtap="onPay">
+        去支付
+    </view>
+</scroll-view>

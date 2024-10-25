@@ -6,7 +6,9 @@
     "pages/mine/mine",
     "pages/details/details",
     "pages/payInfo/payInfo",
-    "pages/address/address"
+    "pages/address/address",
+    "pages/carList/carList",
+    "pages/reserve/reserve"
   ],
   "window": {
     "navigationBarTextStyle": "black",
