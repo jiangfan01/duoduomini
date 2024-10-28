@@ -8,7 +8,12 @@
     "pages/payInfo/payInfo",
     "pages/address/address",
     "pages/carList/carList",
-    "pages/reserve/reserve"
+    "pages/reserve/reserve",
+    "pages/allOrders/allOrders",
+    "pages/waitPay/waitPay",
+    "pages/waitAccept/waitAccept",
+    "pages/finish/finish",
+    "pages/afterSales/afterSales"
   ],
   "window": {
     "navigationBarTextStyle": "black",

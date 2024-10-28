@@ -28,13 +28,13 @@
             </view>
             <view class="status-item" bindtap="viewPendingShipment">
                 <van-icon name="logistics" size="32"/>
-                <text>待发货</text>
+                <text>待收货</text>
             </view>
             <view class="status-item" bindtap="viewCompletedOrders">
                 <van-icon name="completed-o" size="32"/>
                 <text>已完成</text>
             </view>
-            <view class="status-item" bindtap="viewCompletedOrders">
+            <view class="status-item" bindtap="viewAfterSales">
                 <van-icon name="label-o" size="32"/>
                 <text>我的售后</text>
             </view>

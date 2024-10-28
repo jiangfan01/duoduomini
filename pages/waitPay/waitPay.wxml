@@ -1,0 +1,23 @@
+<scroll-view scroll-y class="box">
+    <view class="items">
+        <view class="item" wx:for="{{allOrders}}" wx:key="index">
+            <view class="item-order-number">订单号：{{item.orderNumber}}</view>
+            <view class="item-content">
+                <view class="item-img">
+                    <image src="/images/demo/test.jpg"></image>
+                </view>
+                <view class="item-info">
+                    <view class="item-title">{{item.title}}</view>
+                    <view class="item-tag">{{item.tag}}</view>
+                    <view class="item-price">￥{{item.price}}</view>
+                    <view class="item-action">
+                        <text class="cancel" bindtap="cancel">取消订单</text>
+                        <text class="goto-pay" bindtap="toPay">去支付</text>
+                    </view>
+                    <view class="item-number">x{{item.count}}</view>
+                </view>
+
+            </view>
+        </view>
+    </view>
+</scroll-view>
